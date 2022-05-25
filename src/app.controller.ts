@@ -40,4 +40,11 @@ export class AppController {
       return ResponseEntity.ERROR_WITH('회원 가입에 실패하였습니다.');
     }
   }
+
+  @Get('/error')
+  showError():  ResponseEntity<string> {
+    this.logger.info('>>>>>>>>>>> Test');
+    return ResponseEntity.ERROR();
+  }
+
 }

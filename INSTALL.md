@@ -1,4 +1,7 @@
 
+# 참고
+* https://github.com/jojoldu/monorepo-nestjs-typeorm
+
 # npm install class-transformer class-validator
 # npm install --save @nestjs/swagger swagger-ui-express
 # npm install --save @nestjs/swagger fastify-swagger

@@ -7,6 +7,7 @@ import { UserShowDto } from './dto/UserShowDto';
 import { User } from './entity/User.entity';
 import { LocalDateTime } from 'js-joda';
 import { UserSignupReq } from './dto/UserSignupReq';
+import { WrappedResponse } from './common/WrappedResponse';
 
 @Controller()
 export class AppController {
@@ -15,10 +16,16 @@ export class AppController {
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger
   ) {}
 
-  @Get()
+  @Get('')
   getHello(): ResponseEntity<string> {
     this.logger.info('>>>>>>>>>>> Test');
     return ResponseEntity.OK_WITH(this.appService.getHello());
+  }
+
+  @Post('api/login')
+  login(): any {
+    this.logger.info('>>>>>>>>>>> Test');
+    return WrappedResponse.OK_WITH(this.appService.signin());
   }
 
   @Get('/show')
